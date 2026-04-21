@@ -1,0 +1,35 @@
+@import "tailwindcss";
+
+
+
+@layer base {
+
+    body {
+        @apply bg-base-white;
+    }
+
+    section {
+        @apply px-4 md:px-10 lg:px-20;
+    }
+
+    button {
+        @apply p-2.5 text-base text-center flex justify-center rounded-lg font-semibold h-fit;
+    }
+}
+
+@theme {
+    --color-base-white: #fff;
+    --color-brand-50: #F9F5FF;
+    --color-brand-100: #F4EBFF;
+    --color-brand-200: #E9D7FE;
+    --color-brand-300: #D6BBFB;
+    --color-brand-700: #6941C6;
+    --color-brand-900: #42307D;
+    --color-neutral-300: #D4D4D4;
+    --color-neutral-500: #737373;
+    --color-neutral-600: #525252;
+    --color-neutral-900: #171717;
+}
+
+@layer components {
+}

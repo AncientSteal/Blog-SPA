@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>blog-spa</title>
+    <script type="module" src="src/card.js" defer></script>
+    <script type="module" src="src/main.js" defer></script>
+  </head>
+  <body class="relative overflow-x-hidden selection:bg-brand-300 selection:text-brand-700">
+    <div class="absolute -top-[30vh] -left-[20vw] -z-1">
+      <div class="bg-brand-50 w-[150vw] md:h-[90vh] h-[70vh] rotate-350 absolute z-2"></div>
+      <div class="bg-brand-100 w-[150vw] md:h-[100vh] h-[75vh] rotate-350 absolute z-1"></div>
+      <div class="bg-brand-300 w-[150vw] md:h-[110vh] h-[80vh] rotate-350 absolute z-0"></div>
+    </div>
+    <section>
+      <header>
+        <nav class="flex justify-between items-center py-4 md:py-4.5 lg:px-8 font-semibold text-neutral-600 sticky">
+          <div class="flex gap-6 lg:gap-8">
+            <div class="items-center gap-2.5 flex">
+              <div class="w-8 h-8 bg-[url(/Logo.svg)] bg-contain bg-no-repeat"></div>
+              <div class="text-neutral-900 text-3xl md:text-xl font-bold">Untitled UI</div>
+            </div>
+            <div class="hidden items-center lg:gap-5 gap-4 text-base md:flex">
+              <a href="#">Home</a>
+              <a class="flex items-center gap-2" href="#">Products
+                <div class="pt-0.5">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="7" viewBox="0 0 12 7" fill="none">
+                    <path d="M.8.8l5 5 5-5" stroke="#525252" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </div>
+              </a>
+              <a class="flex items-center gap-2" href="#">Resources
+                <div class="pt-0.5">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="7" viewBox="0 0 12 7" fill="none">
+                    <path d="M.8.8l5 5 5-5" stroke="#525252" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </div>
+              </a>
+              <a href="#">Pricing</a>
+            </div>
+          </div>
+          <div class="hidden md:flex gap-3">
+            <button class="px-4.5 active:bg-brand-700 active:text-base-white">Log in</button>
+            <button class="px-4.5 active:bg-brand-700 active:text-base-white">Sign up</button>
+          </div>
+          <button  class="flex flex-col p-2 gap-1 justify-center items-center md:hidden">
+            <span class="bg-neutral-700 w-4.5 h-0.5 rounded-full"></span>
+            <span class="bg-neutral-700 w-4.5 h-0.5 rounded-full"></span>
+            <span class="bg-neutral-700 w-4.5 h-0.5 rounded-full"></span>
+          </button> 
+        </nav>
+      </header>
+    </section>
+    <section id="base-header">
+      
+    </section>
+    <section id="content-section" class="card__section">
+      
+    </section>
+    <section>
+      <div class="py-16 md:pt-24 md:pb-16 flex flex-col gap-16 md:px-8 border-y border-neutral-200">
+        <div class="flex gap-8 md:gap-10 flex-col justify-center">
+          <div class="flex flex-col gap-4">
+            <h2 class="text-neutral-900 text-center font-semibold text-3xl md:text-4xl">Start your free trial</h2>
+            <p class="text-neutral-500 text-center text-lg md:text-xl">Join over 4,000+ startups already growing with Untitled.</p>
+          </div>
+          <div class="flex flex-col md:flex-row gap-3 justify-center">
+            <button class="w-full md:w-fit bg-brand-700 text-base-white text-center py-3 md:px-5">Get started</button>
+            <button class="w-full md:w-fit bg-brand-50 text-neutral-700 text-center py-3 md:px-5">Learn more</button>
+          </div>
+        </div>
+        <div class="relative w-full md:max-h-[55vh] overflow-hidden">
+          <img class="w-full h-full" src="/content/Content.png" alt="Free trial demo">
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="flex flex-col md:flex-row md:justify-between md:px-8 py-12 gap-8">
+        <div class="flex flex-col gap-2 text-center md:text-start">
+          <h2 class="text-neutral-900 text-lg font-semibold md:text-xl">Join our newsletter</h2>
+          <p class="text-neutral-600 text-base font-normal">We’ll send you a nice letter once per week. No spam.</p>
+        </div>
+        <div class="flex flex-col md:flex-row gap-3 justify-center">
+          <input class="text-neutral-500 w-full md:w-fit py-2.5 px-3.5 rounded-lg border border-neutral-300 h-fit" type="email" placeholder="Enter your email">
+          <button class="w-full md:w-fit bg-brand-700 text-base-white text-center py-3 md:px-5">Subscribe</button>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="py-12 md:py-16 md:border-t md:px-8 border-neutral-200 grid grid-cols-2 gap-8 md:grid-cols-3 lg:grid-cols-6 text-neutral-600 text-base font-semibold">
+        <div class="flex flex-col gap-4">
+          <a href="#" class="text-neutral-500 text-sm">Product</a>
+          <div class="flex flex-col gap-3">
+            <a href="#">Overview</a>
+            <a href="#">Features</a>
+            <a href="#">Solutions<span class="py-0.5 px-2 rounded-full bg-emerald-100 text-emerald-700 text-xs ml-2">New</span></a>
+            <a href="#">Tutorials</a>
+            <a href="#">Pricing</a>
+            <a href="#">Releases</a>
+          </div>
+        </div>
+        <div class="flex flex-col gap-4">
+          <a href="#" class="text-neutral-500 text-sm">Company</a>
+          <div class="flex flex-col gap-3">
+            <a href="#">About us</a>
+            <a href="#">Careers</a>
+            <a href="#">Press</a>
+            <a href="#">News</a>
+            <a href="#">Media kit</a>
+            <a href="#">Contact</a>
+          </div>
+        </div>
+        <div class="flex flex-col gap-4">
+          <a href="#" class="text-neutral-500 text-sm">Resources</a>
+          <div class="flex flex-col gap-3">
+            <a href="#">Blog</a>
+            <a href="#">Newsletter</a>
+            <a href="#">Events</a>
+            <a href="#">Help centre</a>
+            <a href="#">Tutorials</a>
+            <a href="#">Support</a>
+          </div>
+        </div>
+        <div class="flex flex-col gap-4">
+          <a href="#" class="text-neutral-500 text-sm">Use cases</a>
+          <div class="flex flex-col gap-3">
+            <a href="#">Startups</a>
+            <a href="#">Enterprise</a>
+            <a href="#">Government</a>
+            <a href="#">SaaS</a>
+            <a href="#">Marketplaces</a>
+            <a href="#">Ecommerce</a>
+          </div>
+        </div>
+        <div class="flex flex-col gap-4">
+          <a href="#" class="text-neutral-500 text-sm">Social</a>
+          <div class="flex flex-col gap-3">
+            <a href="#">X</a>
+            <a href="#">LinkedIn</a>
+            <a href="#">Facebook</a>
+            <a href="#">GitHub</a>
+            <a href="#">AngelList</a>
+            <a href="#">Dribbble</a>
+          </div>
+        </div>
+        <div class="flex flex-col gap-4">
+          <a href="#" class="text-neutral-500 text-sm">Legal</a>
+          <div class="flex flex-col gap-3">
+            <a href="#">Terms</a>
+            <a href="#">Privacy</a>
+            <a href="#">Cookies</a>
+            <a href="#">Licenses</a>
+            <a href="#">Settings</a>
+            <a href="#">Contact</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <section>
+        <div class="pt-8 pb-12 md:px-8 flex flex-col md:flex-row md:justify-between gap-6 border-t border-neutral-300">
+          <div class="items-center gap-2.5 flex">
+            <div class="w-8 h-8 bg-[url(/Logo.svg)] bg-contain bg-no-repeat"></div>
+            <div class="text-neutral-900 text-2xl font-bold">Untitled UI</div>
+          </div>
+          <div class="text-base text-neutral-500 font-normal">
+            <p>© 2077 Untitled UI. All rights reserved.</p>
+          </div>
+        </div>
+      </section>
+    </footer>
+  </body>
+</html>
