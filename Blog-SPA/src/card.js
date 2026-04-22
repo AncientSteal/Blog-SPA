@@ -39,23 +39,23 @@ export function baseRenderCatalog(blogsSection) {
                 if (!cardContainer) return;
 
                 const blogCard = document.createElement('div');
-                blogCard.id = blog.id;
-                blogCard.className = 'flex flex-col gap-8 px-6 pt-6 pb-8 bg-base-white shadow-lg';
 
                 blogCard.innerHTML = `
-                    <img src="${blog.preview}" alt="Blog preview">
-                    <div class="flex flex-col gap-3">
-                        <span class="text-brand-700 text-sm">${blog.category}</span>
-                        <h3 class="text-neutral-900 text-xl">${blog.title}</h3>
-                        <p class="text-neutral-600 text-base">${blog.short}</p>
-                    </div>
-                    <div class="flex gap-3">
-                        <div class="w-10 h-10 rounded-full overflow-hidden">
-                            <img class="w-full h-full" src="/${blog.avatar}" alt="Avatar">
+                    <div class="flex flex-col gap-8 px-6 pt-6 pb-8 bg-base-white shadow-lg" data-id="${blog.id}">
+                        <img class="aspect-3/2 object-cover" src="${blog.preview}" alt="Blog preview">
+                        <div class="flex flex-col gap-3">
+                            <span class="text-brand-700 text-sm">${blog.category}</span>
+                            <h3 class="text-neutral-900 text-xl">${blog.title}</h3>
+                            <p class="text-neutral-600 text-base">${blog.short}</p>
                         </div>
-                        <div>
-                            <p class="text-neutral-900 font-semibold text-sm">${blog.author_name}</p>
-                            <span class="text-neutral-600 text-sm font-normal">${blog.createdAt}</span>
+                        <div class="flex gap-3">
+                            <div class="w-10 h-10 rounded-full overflow-hidden">
+                                <img class="w-full h-full" src="${blog.avatar}" alt="Avatar">
+                            </div>
+                            <div>
+                                <p class="text-neutral-900 font-semibold text-sm">${blog.author_name}</p>
+                                <span class="text-neutral-600 text-sm font-normal">${blog.createdAt}</span>
+                            </div>
                         </div>
                     </div>
                 `;

@@ -20,6 +20,11 @@ export function renderTitle() {
                 </div>
                 </search>
             </div>
+            <div class="absolute -top-[30vh] -left-[20vw] -z-1">
+                <div class="bg-brand-50 w-[150vw] md:h-[90vh] h-[70vh] rotate-350 absolute z-2"></div>
+                <div class="bg-brand-100 w-[150vw] md:h-[100vh] h-[75vh] rotate-350 absolute z-1"></div>
+                <div class="bg-brand-300 w-[150vw] md:h-[110vh] h-[80vh] rotate-350 absolute z-0"></div>
+            </div>
         `;
 
         container.appendChild(titleElement);
