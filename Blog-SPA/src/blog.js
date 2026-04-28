@@ -5,7 +5,7 @@ export function renderBlog(container, id) {
         const blogData = blogs.find(blog => Number(blog.id) === Number(id));
         if (blogData) {
             container.innerHTML = `
-                <div class="flex flex-col items-center text-neutral-600 text-lg font-normal md:mx-8 mx-0 bg-base-white border-t border-neutral-300 py-16 md:py-24">
+                <div class="flex flex-col items-center text-neutral-600 text-lg font-normal md:mx-8 mx-0 bg-base-white py-16 md:py-24">
                     <div class="w-full">
                         <span class="text-brand-700 text-base font-semibold pb-3">Published ${blogData.createdAt}</span>
                         <h2 class="text-4xl md:text-5xl font-semibold pb-4 md:pb-6 text-neutral-900">${blogData.title}</h2>
