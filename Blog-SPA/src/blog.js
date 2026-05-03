@@ -1,18 +1,21 @@
-import { blogs } from '../src/mockData.js';
+import { blogs } from './mockData.js';
+import { dateToFormat } from './helpers/dateHelper.js';
 
 export function renderBlog(container, id) {
     if (container && id) {
         const blogData = blogs.find(blog => Number(blog.id) === Number(id));
         if (blogData) {
+
+            const formattedDate = dateToFormat(blogData.createdAt);
             container.innerHTML = `
                 <div class="flex flex-col items-center text-neutral-600 text-lg font-normal md:mx-8 mx-0 bg-base-white py-16 md:py-24">
                     <div class="w-full">
-                        <span class="text-brand-700 text-base font-semibold pb-3">Published ${blogData.createdAt}</span>
+                        <span class="text-brand-700 text-base font-semibold pb-3">Published ${formattedDate}</span>
                         <h2 class="text-4xl md:text-5xl font-semibold pb-4 md:pb-6 text-neutral-900">${blogData.title}</h2>
                         <p>${blogData.short}</p>
                     </div>
                     <div class="w-full h-fit max-h-150 pt-16 overflow-hidden">
-                        <img class="w-full h-full aspect-video object-cover" src=${blogData.preview} alt="Blog preview">
+                        <img class="w-full h-full aspect-video object-cover" src="${blogData.preview}" alt="Blog preview">
                     </div>
                     <div class="max-w-200 py-12 md:py-16">
                         ${renderContent(blogData.content)}
@@ -29,6 +32,15 @@ export function renderBlog(container, id) {
                         </div>
                         <div class="text-sm h-fit px-2 rounded-full text-center bg-brand-200 text-brand-700 w-fit">${blogData.category}</div>
                     </div>
+                </div>
+            `;
+        } else if (!blogData) {
+            container.innerHTML = `
+                <div class="px-12 py-24 md:px-16 md:py-32 bg-base-white text-2xl md:text-4xl font-semibold col-span-full">
+                    <p class="text-neutral-900 font-normal text-center">We do not find any results for 
+                        <span class="text-brand-700 font-bold">${id}</span>
+                    </p>
+                    <p class="pt-6 text-neutral-900 font-normal text-center">Maybe you will be interested in the articles from below:</p>
                 </div>
             `;
         }

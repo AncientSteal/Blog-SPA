@@ -1,7 +1,7 @@
 export function renderAdditionalContent(additionalContainer) {
     if (additionalContainer) {
         additionalContainer.innerHTML = `
-            <div class="py-16 md:pt-24 md:pb-16 flex flex-col gap-16 md:px-8 border-y border-neutral-200">
+            <div id="start-free" class="py-16 md:pt-24 md:pb-16 flex flex-col gap-16 md:px-8 border-y border-neutral-200">
                 <div class="flex gap-8 md:gap-10 flex-col justify-center">
                 <div class="flex flex-col gap-4">
                     <h2 class="text-neutral-900 text-center font-semibold text-3xl md:text-4xl">Start your free trial</h2>

@@ -11,7 +11,6 @@ import { formValidation } from './validation.js';
 import { serverAnswer } from './validation.js';
 import { toogleBtnPhase } from './validation.js';
 import { errorForm } from './validation.js';
-import { clearErrors } from './validation.js';
 import { createToast } from './toasts.js';
 
 const container  = document.querySelector("#content-section");
@@ -27,7 +26,7 @@ const handleRoute = () => {
         titleContainer.innerHTML = "";
         additionalContainer.innerHTML = "";
 
-        const adress = window.location.pathname;
+        const address = window.location.pathname;
 
         const initForm = (renderEl, onSuccess) => {
             renderEl(container);
@@ -56,7 +55,7 @@ const handleRoute = () => {
                                 errorForm(message, input);
                             });
                         } else {
-                            onSuccess(data, result);
+                            onSuccess(data);
                             form.reset();
                         }
                     } catch (error) {
@@ -70,19 +69,19 @@ const handleRoute = () => {
             
         }
 
-        if (adress.startsWith('/blog/')) {
-            const id = adress.split('/').pop();
+        if (address.startsWith('/blog/')) {
+            const id = address.split('/').pop();
             renderBlog(container, id);
             renderOtherBlogs(additionalContainer, id);
-        } else if (adress.startsWith('/login')) {
+        } else if (address.startsWith('/login')) {
             initForm(renderLoginPage, (data) => {
-                createToast(`Добро пожаловать, ${data.login}!`);
+                createToast(`Welcome, ${data.login}!`);
                 window.history.pushState({}, "", `/`);
                 handleRoute();
             });
-        } else if (adress.startsWith('/registration')) {
+        } else if (address.startsWith('/registration')) {
             initForm(renderRegistrationPage, (data) => {
-                createToast(`Регистрация пользователя ${data.email} успешна!`);
+                createToast(`User registration ${data.email} successful!`);
                 window.history.pushState({}, "", `/`);
                 handleRoute();
             });
@@ -146,6 +145,7 @@ document.addEventListener('click', (e) => {
     }
 
     const trigger = e.target.closest('[data-trigger]');
+    const target = e.target.closest('[data-target]');
 
     if (trigger) {
         e.preventDefault();
@@ -153,14 +153,22 @@ document.addEventListener('click', (e) => {
         const targets = document.querySelectorAll(`[data-target="${triggerName}"]`)
         const svgTargets = document.querySelectorAll(`[data-svg="${triggerName}"]`)
 
-        targets.forEach((target) => {
-            target.classList.toggle('hidden');
-            target.classList.toggle('flex');
-        })
+        if (targets.length > 0) {
+            targets.forEach((target) => {
+                target.classList.toggle('hidden');
+                target.classList.toggle('flex');
+            })
+        }
 
-        svgTargets.forEach((svg) => {
-            svg.classList.toggle('rotate-180');
-        });
+        if (svgTargets) {
+            svgTargets.forEach((svg) => {
+                svg.classList.toggle('rotate-180');
+            });
+        }
+        return;
+    }
+
+    if (target) {
         return;
     }
 
@@ -193,5 +201,33 @@ function activeLinkShow() {
     }  
 };
 
+const sendLetter = () => {
+    const sendLetterForm = document.querySelector('#send-letter_section');
+    if (sendLetterForm) {
+        clearErrorInput(sendLetterForm);
+        sendLetterForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
 
+            const submitBtn = sendLetterForm.querySelector('button[type="submit"]');
+            const data = formValidation(sendLetterForm);
+            if (data) {
+                submitBtn.disabled = true;
+                try {
+                    toogleBtnPhase(submitBtn, true);
 
+                    createToast(`We will send our letters on ${data.email} :)`);
+                    sendLetterForm.reset();
+                } catch (error) {
+                    createToast(error.message, 'error');
+                } finally {
+                    submitBtn.disabled = false;
+                    toogleBtnPhase(submitBtn, false);
+                }
+
+            } 
+        });
+
+    }
+}
+
+sendLetter();

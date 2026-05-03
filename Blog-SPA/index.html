@@ -1,13 +1,13 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>blog-spa</title>
+    <script type="module" src="src/lenisScroll.js" defer></script>
     <script type="module" src="src/card.js" defer></script>
     <script type="module" src="src/main.js" defer></script>
-    <script type="module" src="src/validation.js" defer></script>
   </head>
   <body class="relative overflow-x-hidden selection:bg-brand-300 selection:text-brand-700">
 
@@ -67,7 +67,7 @@
                   </svg>
                 </div>
               </a>
-              <a href="#">Pricing</a>
+              <a href="#start-free">Pricing</a>
             </div>
           </div>
           <div class="hidden md:flex gap-3">
@@ -127,7 +127,7 @@
                   </svg>
                 </div>
               </a>
-              <a href="#">Pricing</a>
+              <a href="#start-free">Pricing</a>
             </div>
             <div class="grid grid-cols-2 gap-3 text-neutral-600 py-6 border-t border-neutral-100">
               <a href="#">About us</a>
@@ -162,10 +162,12 @@
           <h2 class="text-neutral-900 text-lg font-semibold md:text-xl">Join our newsletter</h2>
           <p class="text-neutral-600 text-base font-normal">We’ll send you a nice letter once per week. No spam.</p>
         </div>
-        <div class="flex flex-col md:flex-row gap-3 justify-center">
-          <input class="text-neutral-500 w-full md:w-fit py-2.5 px-3.5 rounded-lg border border-neutral-300 h-fit" type="email" placeholder="Enter your email">
-          <button class="w-full md:w-fit bg-brand-700 text-base-white text-center py-3 md:px-5">Subscribe</button>
-        </div>
+        <form id="send-letter_section" class="flex flex-col md:flex-row gap-3 justify-center" novalidate>
+          <div class="flex flex-col gap-2">
+            <input name="email" class="text-neutral-500 w-full md:w-full py-2.5 px-3.5 rounded-lg border border-neutral-300 h-fit" type="email" placeholder="Enter your email">
+          </div>
+          <button type="submit" class="w-full md:w-fit bg-brand-700 text-base-white text-center py-3 md:px-5">Subscribe</button>
+        </form>
       </div>
     </section>
     <section>

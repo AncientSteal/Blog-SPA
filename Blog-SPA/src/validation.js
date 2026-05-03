@@ -11,13 +11,12 @@ const clearSingleError = (input) => {
 
 export const errorForm = (message, input) => {
     let errorTextElement = document.createElement('span');
-    errorTextElement.className = 'error-text text-red-500 text-sm font-normal';
-    errorTextElement.innerHTML = message;
+    errorTextElement.className = 'error-text text-red-500 text-sm font-normal mb-2';
+    errorTextElement.textContent = message;
     input.after(errorTextElement);
 };
 
 export const serverAnswer = async (data) => {
-    console.log('data post:', data);
 
     const controller = new AbortController();
     const timeout = setTimeout(() => controller.abort(), 5000)
@@ -33,10 +32,10 @@ export const serverAnswer = async (data) => {
         });
 
         if (!response.ok) {
-            throw new Error(`Возникла ошибка при отправке даных: ${response.status}`)
+            throw new Error(`An error occurred while sending data: ${response.status}`)
         }
 
-        if (data.login.toLowerCase() === 'admin') {
+        if (data.login?.toLowerCase() === 'admin') {
             return {
                 status: 'error',
                 errors: { login: 'This nickname is already taken' },
@@ -47,7 +46,7 @@ export const serverAnswer = async (data) => {
         return result;
     } catch (error) {
         if (error.name === 'AbortError') {
-            throw new Error('Сервер слишком долго не отвечает. Попробуйте позже.')
+            throw new Error('Server is not responding. Please try again later.')
         }
         throw error;
     } finally {
@@ -58,14 +57,14 @@ export const serverAnswer = async (data) => {
 const validationRules = {
     login: (value) => {
         if (value.length < 5 || value.length > 20) {
-            return 'Login must contain from 5 to 20 characters'
+            return 'Login needs too contain from 5 to 20 characters'
         }
         return null;
     },
     
     password:  (value) => {
         if (value.length < 9 || value.length > 20) {
-            return 'Passwords must contain from 9 to 20 characters'
+            return 'Passwords needs too contain from 9 to 20 characters'
         } else if (!/(?=.*[0-9])(?=.*[!$#_/\-*+=();%,.<>])/.test(value)) {
             return 'Passwords needs too contain numbers and special symbols !$#_/-*+=();%,.<>';
         }
@@ -78,14 +77,14 @@ const validationRules = {
 
     email: (value) => {
         if (!/(^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$)/.test(value)) {
-            return 'Email must contains @ symbol, email tocken and domen';
+            return 'Email needs too contain @ symbol, email token and domain';
         }
         return null;
     },
 
     number: (value) => {
         if (!/(^[78])(?=[0-9]{10}$)/.test(value)) {
-            return 'Phone must contain 11 numbers and beggining from 7 or 8'
+            return 'Phone needs too contain 11 numbers and starting from 7 or 8'
         }
         return null;
     }
@@ -105,7 +104,6 @@ export const formValidation = (formElement) => {
     const formData = new FormData(formElement);
     const data = Object.fromEntries(formData);
     const { elements } = formElement;
-    const formBtns = formElement.querySelectorAll('button');
     let passwordValue = '';
 
     clearErrors(formElement);

@@ -1,4 +1,4 @@
-import { blogs } from '../src/mockData.js';
+import { blogs } from './mockData.js';
 
 const blogsSection = document.getElementById('content-section');
 
@@ -15,20 +15,20 @@ export function baseRenderCatalog(blogsSection) {
             </div>
             <div class="mb-16 md:mb-24 md:px-8 pt-12 md:pt-16 flex justify-center w-full">
                 <button class="load__btn flex gap-3 justify-center items-center bg-brand-50 font-semibold text-base text-brand-700 py-3 md:px-5 w-full md:w-fit">
-                <div class="flex items-center pointer-events-none">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
-                    <path d="M6.7.8v11.7M6.7 12.5l5.8-5.8M6.7 12.5l-5.9-5.8" stroke="#6941C6" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </div>
-                Load more
+                    <div class="flex items-center pointer-events-none">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                        <path d="M6.7.8v11.7M6.7 12.5l5.8-5.8M6.7 12.5l-5.9-5.8" stroke="#6941C6" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    Load more
                 </button>
             </div>
         `;
 
         blogsSection.appendChild(baseOfCatalog);
 
-        const loadMoreBtn = document.querySelector('.load__btn');
-        const cardContainer = document.querySelector('.card_container');
+        const loadMoreBtn = baseOfCatalog.querySelector('.load__btn');
+        const cardContainer = baseOfCatalog.querySelector('.card_container');
 
         function renderCards(count, cardArray = blogs) {
 
@@ -41,7 +41,7 @@ export function baseRenderCatalog(blogsSection) {
                 const blogCard = document.createElement('div');
 
                 blogCard.innerHTML = `
-                    <div class="flex flex-col gap-8 px-6 pt-6 pb-8 bg-base-white shadow-lg" data-id="${blog.id}">
+                    <div class="flex flex-col gap-8 px-6 pt-6 pb-8 bg-base-white shadow-lg cursor-pointer" data-id="${blog.id}">
                         <img class="aspect-3/2 object-cover" src="${blog.preview}" alt="Blog preview">
                         <div class="flex flex-col gap-3">
                             <span class="text-brand-700 text-sm">${blog.category}</span>
@@ -65,7 +65,10 @@ export function baseRenderCatalog(blogsSection) {
 
             loadedCards += nextCards.length;
 
-            loadMoreBtn.style.display = loadedCards >= cardArray.length ? 'none' : 'flex';
+            if (loadMoreBtn) {
+                loadMoreBtn.style.display = loadedCards >= cardArray.length ? 'none' : 'flex';
+            }
+            
         }
 
         if (cardContainer && blogs.length > 0) {

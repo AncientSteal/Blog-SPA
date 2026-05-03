@@ -4,14 +4,14 @@ export function renderOtherBlogs(additionalContainer, id) {
     if (additionalContainer && id) {
         const blogsArray = blogs.filter(blog => Number(blog.id) !== Number(id)).slice(0, 3);
 
-        const lastestBlogs = document.createElement('div');
-        lastestBlogs.innerHTML = `
+        const latestBlogs = document.createElement('div');
+        latestBlogs.innerHTML = `
             <div class="md:px-8 md:py-24 border-b border-neutral-300">
                 <div class="flex flex-col md:items-center md:flex-row gap-12 md:gap-0 justify-between">
                     <div class="flex flex-col gap-4 md:gap-5">
                         <span class="text-base text-brand-700 font-semibold">Our blog</span>
-                        <h3 class="text-neutral-900 font-semibold text-3xl md:text-4xl">Lastest blog posts</h3>
-                        <p>Tool and strategies modern teams need to help their companies grow.</p>
+                        <h3 class="text-neutral-900 font-semibold text-3xl md:text-4xl">Latest blog posts</h3>
+                        <p>Tools and strategies modern teams need to help their companies grow.</p>
                     </div>
                     <button id="view-all-posts" class="bg-brand-700 text-base-white">View all posts</button>
                 </div>
@@ -41,7 +41,7 @@ export function renderOtherBlogs(additionalContainer, id) {
                 </div>
             </div>
         `;
-        additionalContainer.appendChild(lastestBlogs);
+        additionalContainer.appendChild(latestBlogs);
     }
 }
 

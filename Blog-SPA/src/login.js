@@ -8,9 +8,9 @@ export function renderLoginPage(container) {
         </div>
         <form id="login-form" class="text-sm text-neutral-700 font-medium w-full md:w-[30vw] flex flex-col gap-2" action="" novalidate>
           <label for="login">Login</label>
-          <input name="login" id="login" class="mb-1" type="text" placeholder="name">
+          <input name="login" id="login" class="mb-0.5" type="text" placeholder="name">
           <label for="password">Password</label>
-          <input name="password" id="password" class="mb-1" type="password" placeholder="example45!_">
+          <input name="password" id="password" class="mb-0.5" type="password" placeholder="example45!_">
           <button type="submit" class="text-base-white bg-brand-700">Login</button>
           <button type="button" class="text-neutral-600 bg-brand-50 registration-btn">Registration</button>
         </form>
