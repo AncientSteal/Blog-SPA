@@ -30,13 +30,13 @@ export function renderOtherBlogs(additionalContainer, id) {
                 </div>
                 <div class="flex flex-col flex-1 gap-4 md:justify-between overflow-hidden">
                     <div class="flex gap-4 h-fit justify-center">
-                        <img class="w-fit h-fit mt-auto" src="/projects-demo/Image2.png" alt="Other projects demo">
-                        <img class="w-fit h-fit" src="/projects-demo/Image3.png" alt="Other projects demo">
+                        <img class="w-fit h-fit mt-auto" src="${import.meta.env.BASE_URL}/projects-demo/Image2.png" alt="Other projects demo">
+                        <img class="w-fit h-fit" src="${import.meta.env.BASE_URL}/projects-demo/Image3.png" alt="Other projects demo">
                     </div>
                     <div class="flex gap-4 h-fit justify-center">
-                        <img class="w-fit h-fit" src="/projects-demo/Image1.png" alt="Other projects demo">
-                        <img class="w-fit h-fit" src="/projects-demo/Image5.png" alt="Other projects demo">
-                        <img class="w-fit h-fit" src="/projects-demo/Image4.png" alt="Other projects demo">
+                        <img class="w-fit h-fit" src="${import.meta.env.BASE_URL}/projects-demo/Image1.png" alt="Other projects demo">
+                        <img class="w-fit h-fit" src="${import.meta.env.BASE_URL}/projects-demo/Image5.png" alt="Other projects demo">
+                        <img class="w-fit h-fit" src="${import.meta.env.BASE_URL}/projects-demo/Image4.png" alt="Other projects demo">
                     </div>
                 </div>
             </div>
@@ -50,7 +50,7 @@ function renderBlogs(array) {
         return array.map(e => {
             return `
                 <div class="flex flex-col gap-8 px-6 pt-6 pb-8 bg-base-white shadow-lg" data-id="${e.id}">
-                    <img class="aspect-3/2 object-cover" src="${e.preview}" alt="Blog preview">
+                    <img class="aspect-3/2 object-cover" src="${import.meta.env.BASE_URL}${e.preview}" alt="Blog preview">
                     <div class="flex flex-col gap-3">
                         <span class="text-brand-700 text-sm">${e.category}</span>
                         <h3 class="text-neutral-900 text-xl">${e.title}</h3>
@@ -58,7 +58,7 @@ function renderBlogs(array) {
                     </div>
                     <div class="flex gap-3">
                         <div class="w-10 h-10 rounded-full overflow-hidden">
-                            <img class="w-full h-full" src="${e.avatar}" alt="Avatar">
+                            <img class="w-full h-full" src="${import.meta.env.BASE_URL}${e.avatar}" alt="Avatar">
                         </div>
                         <div>
                             <p class="text-neutral-900 font-semibold text-sm">${e.author_name}</p>

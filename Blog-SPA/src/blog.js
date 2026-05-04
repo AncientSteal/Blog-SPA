@@ -15,7 +15,7 @@ export function renderBlog(container, id) {
                         <p>${blogData.short}</p>
                     </div>
                     <div class="w-full h-fit max-h-150 pt-16 overflow-hidden">
-                        <img class="w-full h-full aspect-video object-cover" src="${blogData.preview}" alt="Blog preview">
+                        <img class="w-full h-full aspect-video object-cover" src="${import.meta.env.BASE_URL}${blogData.preview}" alt="Blog preview">
                     </div>
                     <div class="max-w-200 py-12 md:py-16">
                         ${renderContent(blogData.content)}
@@ -23,7 +23,7 @@ export function renderBlog(container, id) {
                     <div class="flex flex-col w-full gap-6 md:flex-row md:gap-0 md:justify-between py-6 border-t border-neutral-300">
                         <div class="flex gap-3 md:gap-4">
                             <div class="w-12 h-12 rounded-full overflow-hidden">
-                                <img src="${blogData.avatar}" alt="Avatar">
+                                <img src="${import.meta.env.BASE_URL}${blogData.avatar}" alt="Avatar">
                             </div>
                             <div class="flex flex-col">
                                 <p class="font-semibold text-lg text-neutral-900">${blogData.author_name}</p>

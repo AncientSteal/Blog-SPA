@@ -1,6 +1,6 @@
 # Blog-SPA Учебный проект по макету Figma
 
-## Ссылка на рабочий сайт развёрнутый через хостинг GitHubPages: [Посмотреть проект] ()
+## Ссылка на рабочий сайт развёрнутый через хостинг GitHubPages: [Посмотреть проект](https://ancientsteal.github.io/Blog-SPA/)
 
 ### Untitled UI – FREE Figma UI kit and design system v2.0 - Дизайн разработан и предоставлен в бесплатный доступ автором Jordan Hughes @designer Melbourne, Australia 
 * jordanhughes.co
@@ -59,13 +59,18 @@
    ```
 
 ## Об авторе
-<h1 align="center">Здравствуйте, меня зовут <a href="https://daniilshat.ru/" target="_blank">Артур</a> 
-<img src="https://github.com/blackcater/blackcater/raw/main/images/Hi.gif" height="32"/></h1>
-<h3 align="center">Я начинающий веб-разработчик</h3>
-Планирую дальше изучать React, Docker и научится работать со множеством полезных библиотек, в особенности GSAP.
-Ссылкb на мои соцсети: 
+**Артур** — начинающий Frontend-разработчик.
+Этот проект — мой шаг к освоению SPA и сложной логики на чистом JavaScript.
 
-![ВКонтакте](https://vk.com/oracleelder) 
+### Мои планы по обучению
+- Глубокое изучение **React** для создания масштабируемых приложений.
+- Освоение анимаций с помощью **GSAP** (хочу оживлять интерфейсы!).
+- Изучение **Docker** для понимания процессов деплоя и контейнеризации.
 
-![](https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=AncientSteal&theme=solarized_dark)
+### 📫 Связь со мной:
+
+[![VK](https://img.shields.io/badge/VK-blue?style=for-the-badge)](https://vk.com/oracleelder)
+[![Email](https://img.shields.io/badge/mail.ru-purple?style=for-the-badge&logo=mail.ru)](bezlepkin_artur@mail.ru)
+
+
 

@@ -13,7 +13,7 @@ export function renderAdditionalContent(additionalContainer) {
                 </div>
                 </div>
                 <div class="relative w-full md:max-h-[55vh] overflow-hidden">
-                <img class="w-full h-full" src="/content/Content.png" alt="Free trial demo">
+                <img class="w-full h-full" src="${import.meta.env.BASE_URL}/content/Content.png" alt="Free trial demo">
                 </div>
             </div>
         `;

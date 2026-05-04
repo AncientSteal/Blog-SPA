@@ -42,7 +42,7 @@ export function baseRenderCatalog(blogsSection) {
 
                 blogCard.innerHTML = `
                     <div class="flex flex-col gap-8 px-6 pt-6 pb-8 bg-base-white shadow-lg cursor-pointer" data-id="${blog.id}">
-                        <img class="aspect-3/2 object-cover" src="${blog.preview}" alt="Blog preview">
+                        <img class="aspect-3/2 object-cover" src="${import.meta.env.BASE_URL}${blog.preview}" alt="Blog preview">
                         <div class="flex flex-col gap-3">
                             <span class="text-brand-700 text-sm">${blog.category}</span>
                             <h3 class="text-neutral-900 text-xl">${blog.title}</h3>
@@ -50,7 +50,7 @@ export function baseRenderCatalog(blogsSection) {
                         </div>
                         <div class="flex gap-3">
                             <div class="w-10 h-10 rounded-full overflow-hidden">
-                                <img class="w-full h-full" src="${blog.avatar}" alt="Avatar">
+                                <img class="w-full h-full" src="${import.meta.env.BASE_URL}${blog.avatar}" alt="Avatar">
                             </div>
                             <div>
                                 <p class="text-neutral-900 font-semibold text-sm">${blog.author_name}</p>
