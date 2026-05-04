@@ -60,7 +60,7 @@ function renderContent(array) {
                     return `<p class="pb-4 md:pb-5">${block.text}</p>`;
                 case 'image':
                     return `<figure class="mb-12">
-                        <img class="pb-3 md:pb-4 pt-8" src="${block.url}" alt="Block Img">
+                        <img class="pb-3 md:pb-4 pt-8" src="${import.meta.env.BASE_URL}${block.url}" alt="Block Img">
                         <figcaption class="text-sm">${block.alt}</figcaption>
                     </figure>`;
                 case 'quote':
